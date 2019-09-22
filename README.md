@@ -5,4 +5,4 @@ The example sketch should explain how to use the library.
 
 Do you like it? Please rate it with a star!
 
-You want to build on it - no problem. You are free to use it. 
+You want to build on it? No problem. You are free to use it. 
