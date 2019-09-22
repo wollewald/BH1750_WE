@@ -23,7 +23,7 @@
 * then you need to devide the light intensity by the measuring time factor 
 * 
 * Further information can be found on:
-* http://wolles-elektronikkiste.de/?p=3357
+* http://wolles-elektronikkiste.de/bh1750fvi-lichtsensormodul
 * Sorry - all in German!
 ***************************************************************************/
 
