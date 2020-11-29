@@ -23,8 +23,9 @@
 * then you need to devide the light intensity by the measuring time factor 
 * 
 * Further information can be found on:
-* http://wolles-elektronikkiste.de/bh1750fvi-lichtsensormodul
-* Sorry - all in German!
+* https://wolles-elektronikkiste.de/en/bh1750fvi-gy-30-302-ambient-light-sensor
+* or in German:
+* https://wolles-elektronikkiste.de/bh1750fvi-lichtsensormodul
 ***************************************************************************/
 
 #include <Wire.h>
