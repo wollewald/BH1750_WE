@@ -33,6 +33,8 @@
 #define BH1750_ADDRESS 0x23
 
 BH1750_WE myBH1750(BH1750_ADDRESS); 
+// You may also pass a TwoWire object like wire2 
+// BH1750_WE myBH1750(&wire2, BH1750_ADDRESS);
 
 void setup(){
   Serial.begin(9600);
