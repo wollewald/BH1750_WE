@@ -29,14 +29,14 @@ https://wolles-elektronikkiste.de
 #define POWER_DOWN 0b00000000   
 #define POWER_ON 0b00000001   
 
-typedef enum BH1750Mode {
-  CHM =     0b00010000,   //CHM: Continuously H-Resolution Mode
-  CHM_2 =   0b00010001,   //CHM_2: Continuously H-Resolution Mode2
-  CLM =     0b00010011,   //CLM: Continuously L-Resolution Mode
-  OTH =     0b00100000,   //OTH: One Time H-Resolution Mode
-  OTH_2 =   0b00100001,   //OTH_2: One Time H-Resolution Mode2
-  OTL =     0b00100011    //OTL: One Time L-Resolution Mode
-} mode;
+enum BH1750Mode {
+    CHM =     0b00010000,   //CHM: Continuously H-Resolution Mode
+    CHM_2 =   0b00010001,   //CHM_2: Continuously H-Resolution Mode2
+    CLM =     0b00010011,   //CLM: Continuously L-Resolution Mode
+    OTH =     0b00100000,   //OTH: One Time H-Resolution Mode
+    OTH_2 =   0b00100001,   //OTH_2: One Time H-Resolution Mode2
+    OTL =     0b00100011    //OTL: One Time L-Resolution Mode
+};
 
 
 class BH1750_WE{
