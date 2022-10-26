@@ -32,9 +32,10 @@
 #include <BH1750_WE.h>
 #define BH1750_ADDRESS 0x23
 
-BH1750_WE myBH1750(BH1750_ADDRESS); 
-// You may also pass a TwoWire object like wire2 
-// BH1750_WE myBH1750(&wire2, BH1750_ADDRESS);
+//BH1750_WE myBH1750 = BH1750_WE(BH1750_ADDRESS); 
+// You may also pass a TwoWire object: 
+//BH1750_WE myBH1750 = BH1750_WE(&Wire, BH1750_ADDRESS);
+// If you don't pass any parameter, Wire and 0x23 will be applied
 
 void setup(){
   Serial.begin(9600);
