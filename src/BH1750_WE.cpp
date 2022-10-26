@@ -15,19 +15,9 @@ https://wolles-elektronikkiste.de
 
 #include "BH1750_WE.h"
 
-BH1750_WE::BH1750_WE(uint8_t addr){
-    _wire = &Wire;
-    setI2C_Address(addr);
-}
-    
-BH1750_WE::BH1750_WE(TwoWire *w, uint8_t addr){
-    _wire = w;
-    setI2C_Address(addr);
-}
-
 void BH1750_WE::init(){
-        setMode(CHM);
-        setMeasuringTimeFactor(1.0);
+    setMode(CHM);
+    setMeasuringTimeFactor(1.0);
 }
 
 void BH1750_WE::setMeasuringTimeFactor(float f){
@@ -89,7 +79,7 @@ void BH1750_WE::writeBH1750_WE(uint8_t val){
 
 uint16_t BH1750_WE::readBH1750_WE(){
     uint8_t MSbyte = 0, LSbyte = 0;
-    _wire->requestFrom(I2C_Address, 2);
+    _wire->requestFrom(I2C_Address, static_cast<uint8_t>(2));
     if(_wire->available()){
         MSbyte=_wire->read();
         LSbyte=_wire->read(); 
