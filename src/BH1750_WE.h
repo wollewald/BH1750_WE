@@ -51,7 +51,7 @@ class BH1750_WE{
         void powerOn();
         void powerDown();
                     
-    private:
+    protected:
         void setI2C_Address(uint8_t addr);
         void writeBH1750_WE(uint8_t);
         uint16_t readBH1750_WE();
