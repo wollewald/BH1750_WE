@@ -40,7 +40,14 @@ BH1750_WE myBH1750 = BH1750_WE(BH1750_ADDRESS);
 void setup(){
   Serial.begin(9600);
   Wire.begin();
-  myBH1750.init(); // sets default values: mode = CHM, measuring time factor = 1.0
+  if(!myBH1750.init()){ // sets default values: mode = CHM, measuring time factor = 1.0
+    Serial.println("Connection to the BH1750 failed");
+    Serial.println("Check wiring and I2C address");
+    while(1){}
+  }
+  else{
+    Serial.println("BH1750 is connected");
+  }
   // myBH1750.setMode(CLM);  // uncomment if you want to change the default values
   // myBH1750.setMeasuringTimeFactor(0.45); // uncomment for selection of value between 0.45 and 3.68
 }
