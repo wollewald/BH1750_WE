@@ -38,14 +38,14 @@ typedef enum BH1750Mode {
 class BH1750_WE{
     public:
         static constexpr uint8_t DATA_REG_RESET{0b00000111};   
-		static constexpr uint8_t POWER_DOWN    {0b00000000};  
-		static constexpr uint8_t POWER_ON 	   {0b00000001};   
-		
-		BH1750_WE(const uint8_t addr = 0x23) : _wire{&Wire}, I2C_Address{addr} {}
+        static constexpr uint8_t POWER_DOWN    {0b00000000};  
+        static constexpr uint8_t POWER_ON      {0b00000001};   
+        
+        BH1750_WE(const uint8_t addr = 0x23) : _wire{&Wire}, I2C_Address{addr} {}
         BH1750_WE(TwoWire *w, const uint8_t addr = 0x23) : _wire{w}, I2C_Address{addr} {}
-        void init();
+        uint8_t init();
         void setMeasuringTimeFactor(float f);
-        void setMode(bh1750_mode d_mode);
+        uint8_t setMode(bh1750_mode d_mode);
         float getLux();
         void resetDataReg();
         void powerOn();
@@ -53,7 +53,7 @@ class BH1750_WE{
                     
     protected:
         void setI2C_Address(uint8_t addr);
-        void writeBH1750_WE(uint8_t);
+        uint8_t writeBH1750_WE(uint8_t);
         uint16_t readBH1750_WE();
         TwoWire *_wire;
         float lux;

@@ -15,9 +15,10 @@ https://wolles-elektronikkiste.de
 
 #include "BH1750_WE.h"
 
-void BH1750_WE::init(){
-    setMode(CHM);
+uint8_t BH1750_WE::init(){
+    uint8_t success = setMode(CHM);
     setMeasuringTimeFactor(1.0);
+    return success;
 }
 
 void BH1750_WE::setMeasuringTimeFactor(float f){
@@ -32,9 +33,9 @@ void BH1750_WE::setMeasuringTimeFactor(float f){
     delay(200);
 }
 
-void BH1750_WE::setMode(BH1750Mode d_mode){
+uint8_t BH1750_WE::setMode(BH1750Mode d_mode){
     deviceMode = d_mode;
-    writeBH1750_WE(deviceMode);
+    return !writeBH1750_WE(deviceMode);
 }
 
 float BH1750_WE::getLux(){
@@ -71,10 +72,10 @@ void BH1750_WE::setI2C_Address(uint8_t addr){
     I2C_Address = addr;
 }
 
-void BH1750_WE::writeBH1750_WE(uint8_t val){
+uint8_t BH1750_WE::writeBH1750_WE(uint8_t val){
     _wire->beginTransmission(I2C_Address);
     _wire->write(val);
-    _wire->endTransmission();
+    return _wire->endTransmission();
 }
 
 uint16_t BH1750_WE::readBH1750_WE(){
